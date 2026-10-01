@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>個人檔案</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="top g1">◉ 個人檔案</div>
+
+  <nav class="nav g2" id="nav">
+    <button class="on" data-t="home">首頁</button>
+    <button data-t="about">關於我</button>
+    <button data-t="interests">興趣</button>
+    <button data-t="socials">社群</button>
+  </nav>
+
+  <!-- 首頁 -->
+  <section class="sec on" id="home">
+    <div class="head g1">
+      <div class="banner"></div>
+      <div class="hrow">
+        <!-- ========================================
+             AVATAR 修改這裡可更換頭像
+             將圖片放到 assets/ 資料夾，改下面 src 的檔名
+             支援 PNG / JPG / WEBP / GIF
+             ======================================== -->
+        <img class="avatar" id="avatar" src="assets/avatar.png" alt="頭像">
+        <div class="who">
+          <h1><span id="uname"></span><span class="tag" id="utag"></span></h1>
+          <p id="utitle"></p>
+        </div>
+      </div>
+    </div>
+    <div class="chips g3" id="chips"></div>
+    <div class="grid">
+      <div class="g2 card hl" id="highlights"></div>
+      <div class="g2 card table" id="table"></div>
+    </div>
+    <div class="meta g3" id="meta"></div>
+    <div class="about g2 card">
+      <h2>簡介</h2>
+      <div id="intro"></div>
+    </div>
+  </section>
+
+  <!-- 關於我 -->
+  <section class="sec" id="about">
+    <div class="about g2">
+      <!-- ========================================
+           ABOUT ME 修改這裡可編輯自我介紹
+           支援 HTML：<b> <mark> <a> 與 emoji，多段請用多個 <p>
+           ======================================== -->
+      <h2>關於我</h2>
+      <div id="aboutme">
+        <p>嗨，我是 <b>Your Name</b> 👋</p>
+        <p>這裡是自我介紹，可以寫多行文字、<mark>重點標示</mark>、<a href="#">連結</a> 與 emoji ✨</p>
+        <p>平常喜歡聽音樂、拍照、學習新事物，也喜歡認識有趣的人。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 興趣 -->
+  <section class="sec" id="interests"><div class="g2"><div class="about"><h2>興趣與技能</h2></div><div class="cards" id="cards"></div></div></section>
+
+  <!-- 社群 -->
+  <section class="sec" id="socials"><div class="g2">
+    <!-- 社群連結在 script.js 的 SOCIALS 修改 -->
+    <div class="socials" id="soclist"></div>
+  </div></section>
+
+  <audio id="bgm" loop preload="none"></audio>
+</div>
+
+<div class="player g1">
+  <button id="pp" title="播放/暫停">▶</button>
+  <input id="vol" type="range" min="0" max="1" step=".05" value=".4" aria-label="音量">
+  <span id="mname"></span>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
