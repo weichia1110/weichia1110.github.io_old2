@@ -1,0 +1,85 @@
+/* ========================================
+   WEBSITE BACKGROUND
+   修改這裡可以更換背景（PNG/JPG/WEBP/GIF，放在 assets/）
+   找不到圖片時會顯示漸層
+   ======================================== */
+:root{
+  --bg-image:url("assets/background.png");
+  --bg-fallback:radial-gradient(circle at 20% 15%,#7a3b8f 0,transparent 45%),radial-gradient(circle at 85% 70%,#1f6f8b 0,transparent 50%),#1a1424;
+  /* ========================================
+     GLASSMORPHISM / 顏色
+     修改這裡可調整玻璃透明度、模糊度與主色
+     ======================================== */
+  --accent:#ff66ab;
+  --text:#f3eef7; --muted:rgba(243,238,247,.62);
+  --glass-1:rgba(255,255,255,.12); --glass-2:rgba(255,255,255,.08); --glass-3:rgba(255,255,255,.05);
+  --line:rgba(255,255,255,.16); --blur:blur(18px) saturate(140%);
+  --shadow:0 8px 32px rgba(0,0,0,.28);
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:"Noto Sans TC",system-ui,sans-serif;color:var(--text);min-height:100vh;
+  background:var(--bg-image) center/cover fixed no-repeat,var(--bg-fallback);background-color:#1a1424;
+  overflow-x:hidden;padding:16px 12px 90px}
+.g1{background:var(--glass-1)}.g2{background:var(--glass-2)}.g3{background:var(--glass-3)}
+.g1,.g2,.g3{border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:var(--blur);-webkit-backdrop-filter:var(--blur);border-radius:16px}
+.wrap{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:12px;animation:in .6s ease both}
+@keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.card{transition:transform .25s,background .25s}.card:hover{transform:translateY(-2px);background:var(--glass-1)}
+
+.top{padding:14px 18px;font-weight:700}
+.nav{display:flex;gap:4px;padding:6px;overflow-x:auto;scrollbar-width:none}
+.nav button{background:none;border:0;color:var(--muted);font:inherit;padding:8px 16px;border-radius:10px;cursor:pointer;white-space:nowrap;transition:.2s}
+.nav button:hover{color:var(--text);background:var(--glass-3)}
+.nav button.on{color:#fff;background:var(--glass-1);box-shadow:inset 0 -2px var(--accent)}
+.sec{display:none;flex-direction:column;gap:12px}.sec.on{display:flex;animation:in .4s ease both}
+
+/* ========================================
+   BANNER 修改這裡可更換橫幅（放在 assets/banner.png）
+   ======================================== */
+.banner{height:200px;background:url("assets/banner.png") center/cover,linear-gradient(120deg,#4aa3c7,#8fd8d0 50%,#5a8fd6)}
+.head{overflow:hidden}
+.hrow{display:flex;gap:18px;padding:0 20px 16px;margin-top:-44px;align-items:flex-end;flex-wrap:wrap}
+.avatar{width:120px;height:120px;border-radius:24px;border:3px solid rgba(255,255,255,.35);box-shadow:var(--shadow);
+  object-fit:cover;background:linear-gradient(135deg,#ff9ac6,#7aa7ff);transition:transform .3s;flex:none}
+.avatar:hover{transform:scale(1.04)}
+.who{padding-bottom:4px;min-width:0}
+.who h1{font-size:26px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tag{font-size:12px;background:var(--accent);padding:2px 10px;border-radius:99px}.tag:empty{display:none}
+.who p{color:var(--muted);margin-top:4px}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:14px 18px}
+.chip{padding:6px 14px;border-radius:99px;font-size:13px;background:var(--glass-2);border:1px solid var(--line);transition:.2s}
+.chip:hover{border-color:var(--accent);transform:translateY(-2px)}
+
+.grid{display:grid;grid-template-columns:1fr 300px;gap:12px}
+.hl{padding:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:16px}
+.hl small{color:var(--muted);font-size:13px}.hl b{display:block;font-size:24px;margin-top:2px;color:#ffd166}
+.table{padding:14px 18px;font-size:14px}
+.table div{display:flex;justify-content:space-between;padding:6px 0;gap:12px}.table span{color:var(--muted)}
+.meta{padding:10px 18px;color:var(--muted);font-size:13px;display:flex;gap:16px;flex-wrap:wrap}
+
+.about{padding:20px 22px;line-height:1.8}
+.about h2{font-size:16px;display:inline-block;border-bottom:2px solid var(--accent);margin-bottom:12px}
+.about p+p{margin-top:8px}
+.about mark{background:rgba(255,102,171,.3);color:#fff;padding:0 4px;border-radius:4px}
+.about a{color:#ffb3d6}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;padding:0 14px 14px}
+.cards .card{padding:14px 16px;border-radius:12px;background:var(--glass-3);border:1px solid var(--line)}
+.cards h3{font-size:15px;margin-bottom:4px}.cards p{font-size:13px;color:var(--muted)}
+
+.socials{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;padding:14px}
+.soc{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;color:var(--text);text-decoration:none;
+  background:var(--glass-3);border:1px solid var(--line);transition:.25s}
+.soc:hover{transform:translateY(-3px);background:var(--glass-1);border-color:var(--accent)}
+.soc svg{width:20px;height:20px;fill:currentColor;flex:none}
+
+.player{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;padding:8px 14px;border-radius:99px;z-index:9;max-width:calc(100% - 24px)}
+.player button{background:var(--glass-1);border:1px solid var(--line);color:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer}
+.player input{width:90px;accent-color:var(--accent)}.player span{font-size:12px;color:var(--muted);white-space:nowrap}
+
+@media(max-width:760px){
+  .grid{grid-template-columns:1fr}.banner{height:130px}
+  .hrow{margin-top:-40px;padding:0 14px 14px}.avatar{width:92px;height:92px;border-radius:20px}
+  .who h1{font-size:21px}
+}
