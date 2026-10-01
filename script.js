@@ -2,15 +2,15 @@
    PROFILE DATA — 修改這裡的名稱、簡介、資料（皆為 placeholder）
    ======================================== */
 const PROFILE = {
-  username: "Your Name",        // 顯示名稱
+  username: "Aiko",        // 顯示名稱
   tag: "",                      // 名稱旁的小標籤，留空則不顯示
   title: "學生 / 設計愛好者",     // 名稱下方一行簡介
   // 標籤（顯示在 Banner 下方）
   chips: ["🎧 音樂", "📷 攝影", "💻 程式", "🎮 遊戲", "☕ 咖啡"],
   // 大字重點資訊
-  highlights: [["所在地", "Taiwan"], ["年齡", "20"], ["身分", "學生"]],
+  highlights: [["所在地", "Taoyuan Taiwan"], ["年齡", "16"], ["身分", "學生"]],
   // 右側資料表
-  table: [["暱稱", "Your Name"], ["生日", "01/01"], ["語言", "中文 / English"], ["MBTI", "—"], ["Email", "you@example.com"]],
+  table: [["暱稱", "Aiko"], ["生日", "11/10"], ["語言", "中文 / English"], ["MBTI", "—"], ["Email", "wwwuharry@gmail.com"]],
   // 底部資訊列
   meta: ["📍 Taiwan", "📅 加入時間：2026 年", "🟢 目前狀態：線上"],
   intro: "歡迎來到我的個人檔案！在這裡可以認識我、看看我的興趣，並找到我的社群連結。",
@@ -37,7 +37,7 @@ const SOCIALS = [
 /* ========================================
    MUSIC — 將音樂檔放入 assets/music/，然後修改下面的檔名即可
    ======================================== */
-const MUSIC = { src: "assets/music/background.mp3", name: "♪ background.mp3", volume: 0.4 };
+const MUSIC = { src: "assets/music/doiclenchmyfists.mp3", name: "do I clench my fists?", volume: 0.4 };
 
 /* ---------- 以下為渲染邏輯，一般不需修改 ---------- */
 const $ = id => document.getElementById(id);
