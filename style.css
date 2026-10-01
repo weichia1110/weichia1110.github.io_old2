@@ -4,7 +4,7 @@
    找不到圖片時會顯示漸層
    ======================================== */
 :root{
-  --bg-image:url("assets/background.png");
+  --bg-image:url("assets/background/background01.png");
   --bg-fallback:radial-gradient(circle at 20% 15%,#7a3b8f 0,transparent 45%),radial-gradient(circle at 85% 70%,#1f6f8b 0,transparent 50%),#1a1424;
   /* ========================================
      GLASSMORPHISM / 顏色
